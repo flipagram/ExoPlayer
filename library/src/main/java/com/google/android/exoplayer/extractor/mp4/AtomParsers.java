@@ -235,6 +235,10 @@ import java.util.List;
       }
     }
 
+    if (remainingSamplesInChunk < 0) {
+        remainingSamplesInChunk = 0;
+    }
+
     Util.scaleLargeTimestampsInPlace(timestamps, 1000000, track.timescale);
 
     // Check all the expected samples have been seen.
